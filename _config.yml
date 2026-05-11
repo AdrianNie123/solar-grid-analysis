@@ -1,0 +1,21 @@
+title: "California Solar Adoption & Grid Displacement Analysis"
+author: Adrian Nie
+copyright: "2024"
+logo: ""
+
+execute:
+  execute_notebooks: "off"   # notebooks are pre-executed; flip to "auto" when data is ready
+
+html:
+  use_issues_button: false
+  use_repository_button: false
+  use_edit_page_button: false
+
+parse:
+  myst_enable_extensions:
+    - amsmath
+    - colon_fence
+    - dollarmath
+
+latex:
+  latex_engine: pdflatex

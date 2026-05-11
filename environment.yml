@@ -1,0 +1,36 @@
+name: solar_grid_analysis
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  # Core data
+  - pandas>=1.5
+  - numpy>=1.23
+  - scipy>=1.9
+  - statsmodels>=0.14
+  - scikit-learn>=1.2
+  - pyarrow>=12.0
+  # Visualization
+  - matplotlib>=3.6
+  - seaborn>=0.12
+  - plotly>=5.13
+  # Geospatial
+  - geopandas>=0.12
+  - pyogrio>=0.7
+  - libpysal
+  - esda
+  - spreg
+  # Jupyter
+  - jupyter>=1.0
+  - jupyterlab>=4.0
+  - jupyter-book>=0.13
+  - ghp-import
+  # Dev tools
+  - black
+  - flake8
+  - pytest
+  - pip:
+    - gridstatus>=0.12
+    - linearmodels>=4.28

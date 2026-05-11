@@ -1,0 +1,10 @@
+format: jb-book
+root: intro
+chapters:
+  - file: chapters/01_data_methods
+  - file: chapters/02_eda_findings
+  - file: chapters/03_regression_results
+  - file: chapters/04_spatial_patterns
+  - file: chapters/05_duck_curve
+  - file: chapters/06_limitations
+  - file: chapters/07_appendix

@@ -1,0 +1,14 @@
+data/raw/
+data/processed/
+output/_book/
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+*.pyo
+.env
+.DS_Store
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
