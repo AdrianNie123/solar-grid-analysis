@@ -100,11 +100,18 @@ def load_deepsolar(csv_path: Path) -> pd.DataFrame:
 
 
 def load_zip_tract_crosswalk(path: Path) -> pd.DataFrame:
-    """Load HUD or IPUMS ZIP-to-tract relationship file."""
-    df = pd.read_csv(path, dtype={"zip": str, "tract": str})
-    # Normalize ZIP to 5-char string with leading zeros
-    df["zip"] = df["zip"].str.zfill(5)
-    # Filter to CA tracts (FIPS prefix 06)
+    """Load HUD ZIP-to-tract relationship file (CSV or XLSX)."""
+    path = Path(path)
+    if path.suffix in (".xlsx", ".xls"):
+        df = pd.read_excel(path, dtype={"ZIP": str, "TRACT": str})
+        # HUD XLSX uses uppercase column names
+        df = df.rename(columns={"ZIP": "zip", "TRACT": "tract", "RES_RATIO": "res_ratio"})
+    else:
+        df = pd.read_csv(path, dtype={"zip": str, "tract": str})
+
+    df["zip"] = df["zip"].astype(str).str.zfill(5)
+    df["tract"] = df["tract"].astype(str).str.zfill(11)
+    # Filter to CA tracts (state FIPS 06)
     df = df[df["tract"].str.startswith("06")]
-    log.info("Crosswalk loaded: %d ZIP-tract pairs", len(df))
+    log.info("Crosswalk loaded: %d CA ZIP-tract pairs", len(df))
     return df
