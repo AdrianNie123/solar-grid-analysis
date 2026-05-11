@@ -9,6 +9,11 @@ try:
 except ImportError:
     PanelOLS = None  # type: ignore
 
+try:
+    from statsmodels.stats.outliers_influence import variance_inflation_factor
+except ImportError:
+    variance_inflation_factor = None  # type: ignore
+
 OUTCOMES = ["ramp_magnitude_mwh", "curtailment_days_per_month", "negative_lmp_hours_per_month"]
 TABLES_DIR = Path(__file__).parent.parent / "output" / "tables"
 
@@ -30,21 +35,17 @@ def fit_model(
     if PanelOLS is None:
         raise ImportError("linearmodels is required for panel regression")
 
-    data = df.copy()
-    if drop_q1_2023:
-        data = data[~data.get("q1_2023_flag", False)]
+    if drop_q1_2023 and "q1_2023_flag" in df.columns:
+        df = df[~df["q1_2023_flag"]]
 
-    data = data.dropna(subset=["log_btm_lag1", "log_btm_lag1_sq", outcome])
+    data = df.dropna(subset=["log_btm_lag1", "log_btm_lag1_sq", outcome])
     data = _set_panel_index(data)
 
     regressors = ["log_btm_lag1", "log_btm_lag1_sq"]
     if extra_regressors:
         regressors += extra_regressors
 
-    exog = data[regressors]
-    endog = data[outcome]
-
-    model = PanelOLS(endog, exog, entity_effects=True, time_effects=True)
+    model = PanelOLS(data[outcome], data[regressors], entity_effects=True, time_effects=True)
     result = model.fit(cov_type="clustered", cluster_entity=True)
 
     return {
@@ -58,34 +59,29 @@ def fit_model(
 
 def vif(df: pd.DataFrame, cols: list[str]) -> pd.Series:
     """Variance inflation factors for a set of columns."""
-    from sklearn.linear_model import LinearRegression
+    if variance_inflation_factor is None:
+        raise ImportError("statsmodels is required for VIF computation")
 
-    vifs = {}
     X = df[cols].dropna().values
-    for i, col in enumerate(cols):
-        others = np.delete(X, i, axis=1)
-        reg = LinearRegression().fit(others, X[:, i])
-        r2 = reg.score(others, X[:, i])
-        vifs[col] = 1 / (1 - r2) if r2 < 1 else np.inf
+    vifs = {col: variance_inflation_factor(X, i) for i, col in enumerate(cols)}
     return pd.Series(vifs, name="VIF")
 
 
 def save_result_table(result_dict: dict) -> Path:
     """Write regression summary to CSV in output/tables/."""
     TABLES_DIR.mkdir(parents=True, exist_ok=True)
-    label = result_dict["label"]
-    outcome = result_dict["outcome"]
-    path = TABLES_DIR / f"{label}_{outcome}.csv"
+    path = TABLES_DIR / f"{result_dict['label']}_{result_dict['outcome']}.csv"
 
     result = result_dict["result"]
+    ci = result.conf_int()
     table = pd.DataFrame(
         {
             "coef": result.params,
             "se": result.std_errors,
             "t": result.tstats,
             "pvalue": result.pvalues,
-            "ci_lower": result.conf_int()["lower"],
-            "ci_upper": result.conf_int()["upper"],
+            "ci_lower": ci["lower"],
+            "ci_upper": ci["upper"],
         }
     )
     table.to_csv(path)

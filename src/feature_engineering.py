@@ -3,9 +3,6 @@
 import numpy as np
 import pandas as pd
 
-NIGHTTIME_HOURS = set(range(0, 6)) | set(range(20, 24))
-
-
 def compute_net_load(df: pd.DataFrame) -> pd.DataFrame:
     """Add net_load_mw and hourly ramp_mw columns."""
     df = df.copy()

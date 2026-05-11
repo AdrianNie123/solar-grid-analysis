@@ -59,6 +59,7 @@ def plot_morans_scatter(residuals: pd.Series, w, ax=None, save: bool = True):
     z = (residuals - residuals.mean()) / residuals.std()
     lag_z = libpysal.weights.lag_spatial(w, z.values)
 
+    fig = None
     if ax is None:
         fig, ax = plt.subplots(figsize=(6, 6))
 
@@ -77,4 +78,4 @@ def plot_morans_scatter(residuals: pd.Series, w, ax=None, save: bool = True):
         plt.savefig(FIGURES_DIR / "morans_scatter.png", dpi=300, bbox_inches="tight")
         plt.savefig(FIGURES_DIR / "morans_scatter.pdf", bbox_inches="tight")
 
-    return ax
+    return fig, ax

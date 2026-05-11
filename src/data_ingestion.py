@@ -46,24 +46,21 @@ def load_dgstats(csv_path: Path) -> pd.DataFrame:
 # ── CAISO via gridstatus ──────────────────────────────────────────────────────
 
 
-def fetch_caiso_month(year: int, month: int, cache_dir: Optional[Path] = None) -> pd.DataFrame:
-    """
-    Fetch one month of CAISO hourly data via gridstatus.
-    Caches the result as a parquet shard if cache_dir is provided.
-    """
-    import gridstatus  # noqa: PLC0415
-
+def fetch_caiso_month(year: int, month: int, cache_dir: Optional[Path] = None, _iso=None) -> pd.DataFrame:
+    """Fetch one month of CAISO hourly data via gridstatus, with parquet shard caching."""
     shard_path = None
     if cache_dir is not None:
         shard_path = cache_dir / f"caiso_{year}_{month:02d}.parquet"
         if shard_path.exists():
             return pd.read_parquet(shard_path)
 
-    iso = gridstatus.CAISO()
+    if _iso is None:
+        import gridstatus  # noqa: PLC0415
+        _iso = gridstatus.CAISO()
+
     start = f"{year}-{month:02d}-01"
-    # last day of month
     end = pd.Timestamp(start) + pd.offsets.MonthEnd(1)
-    df = iso.get_fuel_mix(start=start, end=end.strftime("%Y-%m-%d"), verbose=False)
+    df = _iso.get_fuel_mix(start=start, end=end.strftime("%Y-%m-%d"), verbose=False)
 
     if shard_path is not None:
         shard_path.parent.mkdir(parents=True, exist_ok=True)
@@ -74,12 +71,15 @@ def fetch_caiso_month(year: int, month: int, cache_dir: Optional[Path] = None) -
 
 def fetch_caiso_all(start_year: int = 2015, end_year: int = 2023) -> pd.DataFrame:
     """Fetch all CAISO monthly shards and concatenate."""
+    import gridstatus  # noqa: PLC0415
+
     cache_dir = RAW_DIR / "caiso_shards"
+    iso = gridstatus.CAISO()
     shards = []
     for year in range(start_year, end_year + 1):
         for month in range(1, 13):
             log.info("Fetching CAISO %d-%02d", year, month)
-            shard = fetch_caiso_month(year, month, cache_dir=cache_dir)
+            shard = fetch_caiso_month(year, month, cache_dir=cache_dir, _iso=iso)
             shards.append(shard)
     return pd.concat(shards, ignore_index=True)
 
