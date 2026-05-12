@@ -1,0 +1,747 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Solar Grid Analysis — Claude Code Project Guide &#8212; California Solar Adoption &amp; Grid Evolution (2015–2023)</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CLAUDE';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">California Solar Adoption & Grid Evolution (2015–2023)</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    California Solar Adoption & Grid Evolution: A Data-Driven Analysis
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="notebooks/01_data_ingest.html">1. Data Ingestion &amp; Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/02_cleaning_qa.html">2. Data Cleaning &amp; QC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/05_eda.html">3. Exploratory Data Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adoption.html">4. Where Solar Clustered (2015–2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="grid_evolution.html">5. How the Grid Changed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spatial_temporal.html">6. Spatial &amp; Temporal Dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="limitations.html">7. Limitations &amp; Future Directions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendix.html">8. Appendix</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/CLAUDE.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Solar Grid Analysis — Claude Code Project Guide</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#research-question">Research Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-goal">Project Goal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tech-stack">Tech Stack</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-layout">Directory Layout</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-sources-status">Data Sources &amp; Status</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-pipeline-run-in-order">Notebook Pipeline (run in order)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-specification">Regression Specification</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-domain-rules-burn-these-in">Key Domain Rules (burn these in)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#website-implementation-jupyter-book-github-pages">Website Implementation (Jupyter Book → GitHub Pages)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-status">Phase Status</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-tests">Running Tests</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="solar-grid-analysis-claude-code-project-guide">
+<h1>Solar Grid Analysis — Claude Code Project Guide<a class="headerlink" href="#solar-grid-analysis-claude-code-project-guide" title="Permalink to this heading">#</a></h1>
+<section id="research-question">
+<h2>Research Question<a class="headerlink" href="#research-question" title="Permalink to this heading">#</a></h2>
+<p>Does geographic clustering of behind-the-meter (BTM) residential solar adoption in California (2015–2023) predict measurable changes in grid stress — specifically faster net-load ramps, higher curtailment rates, and more frequent negative wholesale prices?</p>
+</section>
+<section id="project-goal">
+<h2>Project Goal<a class="headerlink" href="#project-goal" title="Permalink to this heading">#</a></h2>
+<p>End-to-end spatial-econometric analysis deployed as a Jupyter Book on GitHub Pages. Audience: hiring managers evaluating quantitative/data science skills. Adrian Nie is the author.</p>
+</section>
+<hr class="docutils" />
+<section id="tech-stack">
+<h2>Tech Stack<a class="headerlink" href="#tech-stack" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Python 3.11</strong> (via conda env <code class="docutils literal notranslate"><span class="pre">solar_grid_analysis</span></code>)</p></li>
+<li><p><strong>Data</strong>: pandas, numpy, pyarrow (parquet)</p></li>
+<li><p><strong>Geo</strong>: geopandas, pyogrio, libpysal, esda, spreg</p></li>
+<li><p><strong>Modeling</strong>: statsmodels, linearmodels (PanelOLS), scikit-learn</p></li>
+<li><p><strong>Viz</strong>: matplotlib, seaborn, plotly</p></li>
+<li><p><strong>CAISO data</strong>: gridstatus (pip)</p></li>
+<li><p><strong>Book</strong>: jupyter-book, ghp-import</p></li>
+</ul>
+<p>Setup: <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">create</span> <span class="pre">-f</span> <span class="pre">environment.yml</span> <span class="pre">&amp;&amp;</span> <span class="pre">conda</span> <span class="pre">activate</span> <span class="pre">solar_grid_analysis</span></code></p>
+</section>
+<hr class="docutils" />
+<section id="directory-layout">
+<h2>Directory Layout<a class="headerlink" href="#directory-layout" title="Permalink to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>solar_grid_analysis/
+├── data/
+│   ├── raw/                  ← source parquets + CSVs (gitignored)
+│   │   ├── dgstats_raw.csv           MISSING — needs CEC DGStats bulk download
+│   │   ├── dgstats_raw.parquet       produced by notebook 01
+│   │   ├── caiso_hourly_raw.parquet  produced by notebook 01 (gridstatus API)
+│   │   ├── deepsolar_ca_tracts.csv   ✅ in place
+│   │   ├── zip_tract_xwalk.xlsx      ✅ in place (HUD Dec 2023)
+│   │   └── caiso_shards/             monthly CAISO parquet cache
+│   ├── processed/            ← intermediate parquets (gitignored)
+│   └── external/
+│       ├── tl_2020_us_zcta520.shp    ✅ in place (Census TIGER)
+│       ├── utility_territories.*     MISSING — needs CPUC shapefile download
+│       └── ca_zcta.geojson           produced when notebook 04 runs
+├── notebooks/                ← 01–09 numbered analysis notebooks
+├── src/                      ← Python utility modules (importable)
+│   ├── data_ingestion.py
+│   ├── cleaning.py
+│   ├── feature_engineering.py
+│   ├── regression_utils.py
+│   ├── spatial_utils.py
+│   └── plotting.py
+├── output/
+│   ├── figures/              ← PNG + PDF exports
+│   └── tables/               ← regression CSV outputs
+├── chapters/                 ← Jupyter Book narrative .md files
+├── tests/                    ← pytest unit tests
+├── _config.yml               ← Jupyter Book config
+├── _toc.yml                  ← book table of contents
+└── intro.md                  ← book landing page
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="data-sources-status">
+<h2>Data Sources &amp; Status<a class="headerlink" href="#data-sources-status" title="Permalink to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Source</p></th>
+<th class="head"><p>File</p></th>
+<th class="head"><p>Status</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CEC DGStats</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">data/raw/dgstats_raw.csv</span></code></p></td>
+<td><p><strong>MISSING</strong></p></td>
+<td><p>Search “CEC NEM Interconnection Data” on energy.ca.gov — bulk CSV download, one row per application</p></td>
+</tr>
+<tr class="row-odd"><td><p>CAISO OASIS</p></td>
+<td><p>fetched via <code class="docutils literal notranslate"><span class="pre">gridstatus</span></code> API</p></td>
+<td><p>auto</p></td>
+<td><p>Monthly batches 2015–2023, cached in <code class="docutils literal notranslate"><span class="pre">data/raw/caiso_shards/</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>NREL DeepSolar</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">data/raw/deepsolar_ca_tracts.csv</span></code></p></td>
+<td><p>✅</p></td>
+<td><p>Full US dataset, filter to state=’ca’ in notebook 03</p></td>
+</tr>
+<tr class="row-odd"><td><p>HUD ZIP–Tract crosswalk</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">data/raw/zip_tract_xwalk.xlsx</span></code></p></td>
+<td><p>✅</p></td>
+<td><p>Dec 2023 vintage, has RES_RATIO weight column</p></td>
+</tr>
+<tr class="row-even"><td><p>Census TIGER ZCTA5</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">data/external/tl_2020_us_zcta520.shp</span></code></p></td>
+<td><p>✅</p></td>
+<td><p>National 2020 file, filtered to CA ZCTAs in notebook 04</p></td>
+</tr>
+<tr class="row-odd"><td><p>Utility territories</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">data/external/utility_territories.*</span></code></p></td>
+<td><p><strong>MISSING</strong></p></td>
+<td><p>Search “CPUC electric utility service territory shapefile”</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="notebook-pipeline-run-in-order">
+<h2>Notebook Pipeline (run in order)<a class="headerlink" href="#notebook-pipeline-run-in-order" title="Permalink to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>#</p></th>
+<th class="head"><p>Notebook</p></th>
+<th class="head"><p>Inputs</p></th>
+<th class="head"><p>Key Output</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>01</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">01_data_ingest.ipynb</span></code></p></td>
+<td><p>raw CSVs + CAISO API</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">data/raw/*.parquet</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>02</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">02_cleaning_qa.ipynb</span></code></p></td>
+<td><p>raw parquets</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">data/processed/*_clean.parquet</span></code>, <code class="docutils literal notranslate"><span class="pre">qc_report.txt</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>03</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">03_feature_engineering.ipynb</span></code></p></td>
+<td><p>clean parquets</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">dgstats_panel.parquet</span></code>, <code class="docutils literal notranslate"><span class="pre">caiso_daily/monthly.parquet</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>04</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">04_panel_construction.ipynb</span></code></p></td>
+<td><p>panel parquets + geo</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">panel_for_regression.parquet</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>05</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">05_eda.ipynb</span></code></p></td>
+<td><p>panel</p></td>
+<td><p>EDA figures</p></td>
+</tr>
+<tr class="row-odd"><td><p>06</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">06_regression_analysis.ipynb</span></code></p></td>
+<td><p>panel</p></td>
+<td><p>15 regression models, <code class="docutils literal notranslate"><span class="pre">output/tables/</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>07</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">07_spatial_analysis.ipynb</span></code></p></td>
+<td><p>residuals + W matrix</p></td>
+<td><p>Moran’s I, spatial lag model, choropleth</p></td>
+</tr>
+<tr class="row-odd"><td><p>08</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">08_timeseries_decomposition.ipynb</span></code></p></td>
+<td><p>CAISO hourly + cohorts</p></td>
+<td><p>Duck curve figures × 3</p></td>
+</tr>
+<tr class="row-even"><td><p>09</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">09_visualizations.ipynb</span></code></p></td>
+<td><p>all above</p></td>
+<td><p>4 publication-ready figures</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="regression-specification">
+<h2>Regression Specification<a class="headerlink" href="#regression-specification" title="Permalink to this heading">#</a></h2>
+<p><strong>5 models × 3 outcomes = 15 total runs</strong></p>
+<p>Outcomes: <code class="docutils literal notranslate"><span class="pre">ramp_magnitude_mwh</span></code>, <code class="docutils literal notranslate"><span class="pre">curtailment_days_per_month</span></code>, <code class="docutils literal notranslate"><span class="pre">negative_lmp_hours_per_month</span></code></p>
+<p>Baseline spec (Model 1):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Y_it = β₁·log(BTM_lag1) + β₂·[log(BTM_lag1)]² + γ_i (ZIP FE) + δ_t (year FE) + ε_it
+</pre></div>
+</div>
+<p>All models use cluster-robust SEs by ZIP via <code class="docutils literal notranslate"><span class="pre">linearmodels.PanelOLS</span></code>.</p>
+<p>Model variants:</p>
+<ul class="simple">
+<li><p>Model 2: + NEM regime interactions</p></li>
+<li><p>Model 3: stratified by adoption intensity quartile</p></li>
+<li><p>Model 4: + utility territory interactions</p></li>
+<li><p>Model 5: drop Q1 2023 (NBT pull-forward sensitivity)</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="key-domain-rules-burn-these-in">
+<h2>Key Domain Rules (burn these in)<a class="headerlink" href="#key-domain-rules-burn-these-in" title="Permalink to this heading">#</a></h2>
+<p><strong>NEM policy regime dates:</strong></p>
+<ul class="simple">
+<li><p>SDG&amp;E NEM 2.0: 2016-01-01 | NBT: 2023-04-15</p></li>
+<li><p>PG&amp;E NEM 2.0: 2016-12-01 | NBT: 2023-04-15</p></li>
+<li><p>SCE NEM 2.0: 2017-07-01 | NBT: 2023-04-15</p></li>
+</ul>
+<p><strong>Scope boundaries (never cross these):</strong></p>
+<ul class="simple">
+<li><p>Residential NEM/NBT only — no commercial, no industrial</p></li>
+<li><p>IOU territories only — PG&amp;E, SCE, SDG&amp;E (LADWP, SMUD excluded)</p></li>
+<li><p>CAISO grid metrics are system-level, not distribution-level — this is a known limitation, documented in Chapter 6</p></li>
+</ul>
+<p><strong>Q1 2023 flag:</strong> Installs before 2023-04-15 in year 2023 are flagged as potential NBT pull-forward. Model 5 drops these rows for sensitivity testing.</p>
+</section>
+<hr class="docutils" />
+<section id="website-implementation-jupyter-book-github-pages">
+<h2>Website Implementation (Jupyter Book → GitHub Pages)<a class="headerlink" href="#website-implementation-jupyter-book-github-pages" title="Permalink to this heading">#</a></h2>
+<p>The project is a Jupyter Book deployed to GitHub Pages. The site will contain:</p>
+<p><strong>Navigation structure:</strong></p>
+<ol class="arabic simple">
+<li><p>Introduction — research question, motivation, scope</p></li>
+<li><p>Chapter 1: Data &amp; Methods — sources, panel construction, regression spec</p></li>
+<li><p>Chapter 2: Exploratory Findings — adoption trends, grid-stress trends, correlation matrix</p></li>
+<li><p>Chapter 3: Regression Results — 5 model tables, marginal effects plot</p></li>
+<li><p>Chapter 4: Spatial Patterns — Moran’s I, spatial lag model, residual choropleth</p></li>
+<li><p>Chapter 5: Duck Curve Evolution — 2015/2018/2022 daily profiles</p></li>
+<li><p>Chapter 6: Limitations &amp; Discussion — scope caveats, identification challenges</p></li>
+<li><p>Appendix: data dictionary, regression template</p></li>
+</ol>
+<p><strong>Build &amp; deploy:</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter-book<span class="w"> </span>build<span class="w"> </span>.
+ghp-import<span class="w"> </span>-n<span class="w"> </span>-p<span class="w"> </span>-f<span class="w"> </span>output/_book/_build/html
+</pre></div>
+</div>
+<p><strong>Design intent:</strong> Clean academic look, all figures at 300 DPI, labeled with source annotations. No interactive widgets in Phase 1 — static rendered notebook outputs only. Plotly charts (if used) should have static PNG fallbacks.</p>
+</section>
+<hr class="docutils" />
+<section id="phase-status">
+<h2>Phase Status<a class="headerlink" href="#phase-status" title="Permalink to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Phase</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Status</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>Scaffolding — dirs, env, src modules, notebooks, tests</p></td>
+<td><p>✅ Done</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Data ingestion + QC</p></td>
+<td><p>Blocked: DGStats CSV + utility territory shapefile needed</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>Cleaning + feature engineering</p></td>
+<td><p>Not started</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>EDA</p></td>
+<td><p>Not started</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>Regression analysis</p></td>
+<td><p>Not started</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>Spatial analysis</p></td>
+<td><p>Not started</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p>Time-series decomposition</p></td>
+<td><p>Not started</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p>Final visualizations</p></td>
+<td><p>Not started</p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p>Jupyter Book build + deploy</p></td>
+<td><p>Not started</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="running-tests">
+<h2>Running Tests<a class="headerlink" href="#running-tests" title="Permalink to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>solar_grid_analysis
+conda<span class="w"> </span>activate<span class="w"> </span>solar_grid_analysis
+pytest<span class="w"> </span>tests/<span class="w"> </span>-v
+</pre></div>
+</div>
+<p>Unit tests cover: ZIP standardization, DGStats cleaning, net-load computation, CAISO daily aggregation.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#research-question">Research Question</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-goal">Project Goal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tech-stack">Tech Stack</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-layout">Directory Layout</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-sources-status">Data Sources &amp; Status</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-pipeline-run-in-order">Notebook Pipeline (run in order)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-specification">Regression Specification</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-domain-rules-burn-these-in">Key Domain Rules (burn these in)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#website-implementation-jupyter-book-github-pages">Website Implementation (Jupyter Book → GitHub Pages)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#phase-status">Phase Status</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-tests">Running Tests</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Adrian Nie
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

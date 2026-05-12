@@ -1,0 +1,788 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>04 · Panel Construction &#8212; California Solar Adoption &amp; Grid Evolution (2015–2023)</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/04_panel_construction';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">California Solar Adoption & Grid Evolution (2015–2023)</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    California Solar Adoption & Grid Evolution: A Data-Driven Analysis
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="01_data_ingest.html">1. Data Ingestion &amp; Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_cleaning_qa.html">2. Data Cleaning &amp; QC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_eda.html">3. Exploratory Data Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adoption.html">4. Where Solar Clustered (2015–2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grid_evolution.html">5. How the Grid Changed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spatial_temporal.html">6. Spatial &amp; Temporal Dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../limitations.html">7. Limitations &amp; Future Directions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix.html">8. Appendix</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/04_panel_construction.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>04 · Panel Construction</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-zip-utility-territory-map">4.1 Build ZIP → Utility Territory Map</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-into-regression-panel">4.2 Merge into Regression Panel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#balance-validation">4.3 Balance Validation</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="panel-construction">
+<h1>04 · Panel Construction<a class="headerlink" href="#panel-construction" title="Permalink to this heading">#</a></h1>
+<p>Joins DGStats, CAISO monthly, DeepSolar, and utility territory map into <code class="docutils literal notranslate"><span class="pre">panel_for_regression.parquet</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="n">ROOT</span> <span class="o">=</span> <span class="n">Path</span><span class="p">()</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="o">.</span><span class="n">parent</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s1">&#39;src&#39;</span><span class="p">))</span>
+
+<span class="n">PROC</span> <span class="o">=</span> <span class="n">ROOT</span> <span class="o">/</span> <span class="s1">&#39;data&#39;</span> <span class="o">/</span> <span class="s1">&#39;processed&#39;</span>
+<span class="n">EXT</span> <span class="o">=</span> <span class="n">ROOT</span> <span class="o">/</span> <span class="s1">&#39;data&#39;</span> <span class="o">/</span> <span class="s1">&#39;external&#39;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">geopandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gpd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">feature_engineering</span><span class="w"> </span><span class="kn">import</span> <span class="n">build_panel</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="build-zip-utility-territory-map">
+<h2>4.1 Build ZIP → Utility Territory Map<a class="headerlink" href="#build-zip-utility-territory-map" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">utility_gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">EXT</span> <span class="o">/</span> <span class="s1">&#39;utility_territories.geojson&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">utility_gdf</span><span class="o">.</span><span class="n">crs</span><span class="p">,</span> <span class="n">utility_gdf</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">utility_gdf</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>EPSG:4326 (3, 48)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Acronym</th>
+      <th>Utility</th>
+      <th>AgencyNum</th>
+      <th>Type</th>
+      <th>URL</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>HIFLD_ID</th>
+      <th>Sales_GWh_</th>
+      <th>Sales_GWh1</th>
+      <th>...</th>
+      <th>Sales_G_29</th>
+      <th>Sales_G_30</th>
+      <th>Sales_G_31</th>
+      <th>Sales_G_32</th>
+      <th>Sales_G_33</th>
+      <th>Sales_G_34</th>
+      <th>OnlineName</th>
+      <th>Audit</th>
+      <th>utility_name</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>SCE</td>
+      <td>Southern California Edison</td>
+      <td>86250.0</td>
+      <td>IOU</td>
+      <td>https://www.sce.com/</td>
+      <td>(818) 302-1212</td>
+      <td>2244 Walnut Grove Avenue Rosemead, CA 91770-3714</td>
+      <td>17609</td>
+      <td>71016.547845</td>
+      <td>69272.28376</td>
+      <td>...</td>
+      <td>81054.000005</td>
+      <td>81132.999996</td>
+      <td>82971.000004</td>
+      <td>76840.077169</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>None</td>
+      <td>None</td>
+      <td>Southern California Edison</td>
+      <td>MULTIPOLYGON Z (((-118.60361 33.47801 0, -118....</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>PG&amp;E</td>
+      <td>Pacific Gas &amp; Electric Company</td>
+      <td>71021.0</td>
+      <td>IOU</td>
+      <td>https://www.pge.com/</td>
+      <td>(415) 973-7000</td>
+      <td>77 Beale Street San Francisco, CA 94105</td>
+      <td>14328</td>
+      <td>70036.326445</td>
+      <td>70483.38716</td>
+      <td>...</td>
+      <td>78518.835139</td>
+      <td>78438.000003</td>
+      <td>77887.000005</td>
+      <td>72932.833237</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>None</td>
+      <td>None</td>
+      <td>Pacific Gas &amp; Electric Company</td>
+      <td>MULTIPOLYGON Z (((-120.87195 35.21664 0, -120....</td>
+    </tr>
+  </tbody>
+</table>
+<p>2 rows × 48 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read CA ZCTA shapefile — use Census TIGER ZCTA5</span>
+<span class="c1"># If not yet downloaded, note the path and skip for now</span>
+<span class="n">zcta_path</span> <span class="o">=</span> <span class="n">EXT</span> <span class="o">/</span> <span class="s1">&#39;ca_zcta.geojson&#39;</span>
+<span class="k">if</span> <span class="n">zcta_path</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+    <span class="n">zcta_gdf</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="n">zcta_path</span><span class="p">)</span>
+    <span class="n">zcta_gdf</span> <span class="o">=</span> <span class="n">zcta_gdf</span><span class="o">.</span><span class="n">to_crs</span><span class="p">(</span><span class="n">utility_gdf</span><span class="o">.</span><span class="n">crs</span><span class="p">)</span>
+    <span class="n">zcta_centroids</span> <span class="o">=</span> <span class="n">zcta_gdf</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">zcta_centroids</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zcta_gdf</span><span class="o">.</span><span class="n">geometry</span><span class="o">.</span><span class="n">centroid</span>
+    <span class="n">joined</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">sjoin</span><span class="p">(</span><span class="n">zcta_centroids</span><span class="p">[[</span><span class="s1">&#39;ZCTA5CE20&#39;</span><span class="p">,</span> <span class="s1">&#39;geometry&#39;</span><span class="p">]],</span> <span class="n">utility_gdf</span><span class="p">[[</span><span class="s1">&#39;utility_name&#39;</span><span class="p">,</span> <span class="s1">&#39;geometry&#39;</span><span class="p">]],</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">predicate</span><span class="o">=</span><span class="s1">&#39;within&#39;</span><span class="p">)</span>
+    <span class="n">zip_utility</span> <span class="o">=</span> <span class="n">joined</span><span class="p">[[</span><span class="s1">&#39;ZCTA5CE20&#39;</span><span class="p">,</span> <span class="s1">&#39;utility_name&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;ZCTA5CE20&#39;</span><span class="p">:</span> <span class="s1">&#39;zip_code&#39;</span><span class="p">,</span> <span class="s1">&#39;utility_name&#39;</span><span class="p">:</span> <span class="s1">&#39;utility&#39;</span><span class="p">})</span>
+    <span class="n">zip_utility</span><span class="p">[</span><span class="s1">&#39;zip_code&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zip_utility</span><span class="p">[</span><span class="s1">&#39;zip_code&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">zip_utility</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="n">PROC</span> <span class="o">/</span> <span class="s1">&#39;zip_utility_map.parquet&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;ZIP → utility map: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">zip_utility</span><span class="p">)</span><span class="si">:</span><span class="s1">,</span><span class="si">}</span><span class="s1"> ZIPs&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;ZCTA shapefile not found at </span><span class="si">{</span><span class="n">zcta_path</span><span class="si">}</span><span class="s1">. Using placeholder empty map.&#39;</span><span class="p">)</span>
+    <span class="n">zip_utility</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;zip_code&#39;</span><span class="p">,</span> <span class="s1">&#39;utility&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ZIP → utility map: 2,045 ZIPs
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/6s/xmd0chzj1pqcst4_3lrvmq380000gn/T/ipykernel_23046/2124578364.py:8: UserWarning: Geometry is in a geographic CRS. Results from &#39;centroid&#39; are likely incorrect. Use &#39;GeoSeries.to_crs()&#39; to re-project geometries to a projected CRS before this operation.
+
+  zcta_centroids[&#39;geometry&#39;] = zcta_gdf.geometry.centroid
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="merge-into-regression-panel">
+<h2>4.2 Merge into Regression Panel<a class="headerlink" href="#merge-into-regression-panel" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dgstats_panel</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">PROC</span> <span class="o">/</span> <span class="s1">&#39;dgstats_panel.parquet&#39;</span><span class="p">)</span>
+<span class="n">caiso_monthly</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">PROC</span> <span class="o">/</span> <span class="s1">&#39;caiso_monthly.parquet&#39;</span><span class="p">)</span>
+<span class="n">deepsolar_zip</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">PROC</span> <span class="o">/</span> <span class="s1">&#39;deepsolar_zip.parquet&#39;</span><span class="p">)</span>
+
+<span class="c1"># Rename year column if needed</span>
+<span class="k">if</span> <span class="s1">&#39;install_year&#39;</span> <span class="ow">in</span> <span class="n">dgstats_panel</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+    <span class="n">dgstats_panel</span> <span class="o">=</span> <span class="n">dgstats_panel</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;install_year&#39;</span><span class="p">:</span> <span class="s1">&#39;year&#39;</span><span class="p">})</span>
+
+<span class="n">panel</span> <span class="o">=</span> <span class="n">build_panel</span><span class="p">(</span><span class="n">dgstats_panel</span><span class="p">,</span> <span class="n">caiso_monthly</span><span class="p">,</span> <span class="n">deepsolar_zip</span><span class="p">,</span> <span class="n">zip_utility</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Panel: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">panel</span><span class="p">)</span><span class="si">:</span><span class="s1">,</span><span class="si">}</span><span class="s1"> rows | </span><span class="si">{</span><span class="n">panel</span><span class="p">[</span><span class="s2">&quot;zip_code&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span><span class="si">:</span><span class="s1">,</span><span class="si">}</span><span class="s1"> ZIPs × </span><span class="si">{</span><span class="n">panel</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span><span class="si">}</span><span class="s1"> years × 12 months&#39;</span><span class="p">)</span>
+<span class="n">panel</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Panel: 174,744 rows | 1,618 ZIPs × 9 years × 12 months
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>zip_code</th>
+      <th>year</th>
+      <th>month</th>
+      <th>annual_capacity_kw</th>
+      <th>install_count</th>
+      <th>storage_paired_count</th>
+      <th>btm_capacity_kw</th>
+      <th>demand_gwh</th>
+      <th>solar_gwh</th>
+      <th>wind_gwh</th>
+      <th>...</th>
+      <th>solar_system_count</th>
+      <th>solar_panel_area_divided_by_area</th>
+      <th>utility</th>
+      <th>btm_lag1</th>
+      <th>btm_lag2</th>
+      <th>log_btm_lag1</th>
+      <th>log_btm_lag1_sq</th>
+      <th>ramp_magnitude_mwh</th>
+      <th>curtailment_days_per_month</th>
+      <th>negative_lmp_hours_per_month</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>90001</td>
+      <td>2015</td>
+      <td>1</td>
+      <td>109.09698</td>
+      <td>23.0</td>
+      <td>0.0</td>
+      <td>109.09698</td>
+      <td>17803.362</td>
+      <td>1253.833333</td>
+      <td>1015.0</td>
+      <td>...</td>
+      <td>193.0</td>
+      <td>17132.708733</td>
+      <td>Southern California Edison</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>90001</td>
+      <td>2015</td>
+      <td>2</td>
+      <td>109.09698</td>
+      <td>23.0</td>
+      <td>0.0</td>
+      <td>109.09698</td>
+      <td>15997.661</td>
+      <td>1253.833333</td>
+      <td>1015.0</td>
+      <td>...</td>
+      <td>193.0</td>
+      <td>17132.708733</td>
+      <td>Southern California Edison</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1805701.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>90001</td>
+      <td>2015</td>
+      <td>3</td>
+      <td>109.09698</td>
+      <td>23.0</td>
+      <td>0.0</td>
+      <td>109.09698</td>
+      <td>18211.601</td>
+      <td>1253.833333</td>
+      <td>1015.0</td>
+      <td>...</td>
+      <td>193.0</td>
+      <td>17132.708733</td>
+      <td>Southern California Edison</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2213940.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>3 rows × 23 columns</p>
+</div></div></div>
+</div>
+</section>
+<section id="balance-validation">
+<h2>4.3 Balance Validation<a class="headerlink" href="#balance-validation" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">expected_combos</span> <span class="o">=</span> <span class="n">panel</span><span class="p">[</span><span class="s1">&#39;zip_code&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span> <span class="o">*</span> <span class="n">panel</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span> <span class="o">*</span> <span class="mi">12</span>
+<span class="n">actual</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">panel</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Expected (balanced): </span><span class="si">{</span><span class="n">expected_combos</span><span class="si">:</span><span class="s1">,</span><span class="si">}</span><span class="s1"> | Actual: </span><span class="si">{</span><span class="n">actual</span><span class="si">:</span><span class="s1">,</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">actual</span> <span class="o">&lt;</span> <span class="n">expected_combos</span><span class="p">:</span>
+    <span class="n">missing</span> <span class="o">=</span> <span class="n">expected_combos</span> <span class="o">-</span> <span class="n">actual</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Missing </span><span class="si">{</span><span class="n">missing</span><span class="si">:</span><span class="s1">,</span><span class="si">}</span><span class="s1"> rows — check for gaps in DGStats coverage&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Panel is balanced.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Expected (balanced): 174,744 | Actual: 174,744
+Panel is balanced.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">panel</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="n">PROC</span> <span class="o">/</span> <span class="s1">&#39;panel_for_regression.parquet&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Saved panel_for_regression.parquet&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saved panel_for_regression.parquet
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "solar_grid_analysis"
+        },
+        kernelOptions: {
+            name: "solar_grid_analysis",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'solar_grid_analysis'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#build-zip-utility-territory-map">4.1 Build ZIP → Utility Territory Map</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-into-regression-panel">4.2 Merge into Regression Panel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#balance-validation">4.3 Balance Validation</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Adrian Nie
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

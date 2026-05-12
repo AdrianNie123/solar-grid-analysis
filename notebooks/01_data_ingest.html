@@ -1,0 +1,885 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>1. 01 · Data Ingestion &#8212; California Solar Adoption &amp; Grid Evolution (2015–2023)</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/01_data_ingest';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. 02 · Cleaning &amp; QA" href="02_cleaning_qa.html" />
+    <link rel="prev" title="California Solar Adoption &amp; Grid Evolution: A Data-Driven Analysis" href="../intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">California Solar Adoption & Grid Evolution (2015–2023)</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    California Solar Adoption & Grid Evolution: A Data-Driven Analysis
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Data Ingestion &amp; Validation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="02_cleaning_qa.html">2. Data Cleaning &amp; QC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_eda.html">3. Exploratory Data Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../adoption.html">4. Where Solar Clustered (2015–2023)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../grid_evolution.html">5. How the Grid Changed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../spatial_temporal.html">6. Spatial &amp; Temporal Dynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../limitations.html">7. Limitations &amp; Future Directions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendix.html">8. Appendix</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/01_data_ingest.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>01 · Data Ingestion</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iou-interconnection-applications-replaces-cec-dgstats">1.1. 1.1 IOU Interconnection Applications (replaces CEC DGStats)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caiso-grid-data-load-via-gridstatus-cec-monthly-generation">1.2. 1.2 CAISO Grid Data (load via gridstatus + CEC monthly generation)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nrel-deepsolar-ca">1.3. 1.3 NREL DeepSolar CA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ziptract-crosswalk">1.4. 1.4 ZIP–Tract Crosswalk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">1.5. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.6. Summary</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="data-ingestion">
+<h1><span class="section-number">1. </span>01 · Data Ingestion<a class="headerlink" href="#data-ingestion" title="Permalink to this heading">#</a></h1>
+<p>Downloads / reads all raw data sources and writes parquet files to <code class="docutils literal notranslate"><span class="pre">data/raw/</span></code>.</p>
+<p><strong>Sources</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Source</p></th>
+<th class="head"><p>Access</p></th>
+<th class="head"><p>Output</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>IOU Interconnection Apps</p></td>
+<td><p>5 CSVs in <code class="docutils literal notranslate"><span class="pre">data/raw/interconnection/</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">dgstats_raw.parquet</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>CAISO load</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">gridstatus</span></code> API</p></td>
+<td><p>aggregated to <code class="docutils literal notranslate"><span class="pre">caiso_monthly_merged.parquet</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>CEC monthly generation</p></td>
+<td><p>Excel files in <code class="docutils literal notranslate"><span class="pre">data/raw/cec/</span></code></p></td>
+<td><p>merged into <code class="docutils literal notranslate"><span class="pre">caiso_monthly_merged.parquet</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>NREL DeepSolar CA</p></td>
+<td><p>CSV</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">deepsolar_ca_tracts.parquet</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Census ZIP–Tract crosswalk</p></td>
+<td><p>XLSX</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">zip_tract_xwalk.parquet</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Utility territories</p></td>
+<td><p>Shapefile in <code class="docutils literal notranslate"><span class="pre">data/external/</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">utility_territories.geojson</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="n">ROOT</span> <span class="o">=</span> <span class="n">Path</span><span class="p">()</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span><span class="o">.</span><span class="n">parent</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s1">&#39;src&#39;</span><span class="p">))</span>
+
+<span class="n">RAW</span> <span class="o">=</span> <span class="n">ROOT</span> <span class="o">/</span> <span class="s1">&#39;data&#39;</span> <span class="o">/</span> <span class="s1">&#39;raw&#39;</span>
+<span class="n">EXT</span> <span class="o">=</span> <span class="n">ROOT</span> <span class="o">/</span> <span class="s1">&#39;data&#39;</span> <span class="o">/</span> <span class="s1">&#39;external&#39;</span>
+<span class="n">RAW</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">data_ingestion</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">load_interconnection_apps</span><span class="p">,</span>
+    <span class="n">load_utility_territories</span><span class="p">,</span>
+    <span class="n">load_cec_monthly_generation</span><span class="p">,</span>
+    <span class="n">fetch_caiso_all</span><span class="p">,</span>
+    <span class="n">load_deepsolar</span><span class="p">,</span>
+    <span class="n">load_zip_tract_crosswalk</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="iou-interconnection-applications-replaces-cec-dgstats">
+<h2><span class="section-number">1.1. </span>1.1 IOU Interconnection Applications (replaces CEC DGStats)<a class="headerlink" href="#iou-interconnection-applications-replaces-cec-dgstats" title="Permalink to this heading">#</a></h2>
+<p>Reads the 5 IOU interconnection CSVs from <code class="docutils literal notranslate"><span class="pre">data/raw/interconnection/</span></code> (PG&amp;E historical + current, SCE historical + current, SDG&amp;E combined). Filters to residential NEM/NBT photovoltaic installs with valid CA ZIP codes, approved 2015–2023.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">interconnect_dir</span> <span class="o">=</span> <span class="n">RAW</span> <span class="o">/</span> <span class="s1">&#39;interconnection&#39;</span>
+<span class="k">assert</span> <span class="n">interconnect_dir</span><span class="o">.</span><span class="n">exists</span><span class="p">(),</span> <span class="sa">f</span><span class="s1">&#39;Expected CSV directory at </span><span class="si">{</span><span class="n">interconnect_dir</span><span class="si">}</span><span class="s1">&#39;</span>
+
+<span class="n">dgstats</span> <span class="o">=</span> <span class="n">load_interconnection_apps</span><span class="p">(</span><span class="n">interconnect_dir</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Residential NEM installs loaded: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">dgstats</span><span class="p">)</span><span class="si">:</span><span class="s1">,</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">dgstats</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Residential NEM installs loaded: 1,503,615
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>application_id</th>
+      <th>utility</th>
+      <th>zip_code</th>
+      <th>system_size_dc</th>
+      <th>battery_storage</th>
+      <th>sector</th>
+      <th>app_approved_date</th>
+      <th>cost</th>
+      <th>program_type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>842</th>
+      <td>PGE-INT-113272533</td>
+      <td>PG&amp;E</td>
+      <td>94062</td>
+      <td>5.652</td>
+      <td>0.0</td>
+      <td>Residential</td>
+      <td>2015-06-15</td>
+      <td>NaN</td>
+      <td>NEM</td>
+    </tr>
+    <tr>
+      <th>1259</th>
+      <td>PGE-INT-113272960</td>
+      <td>PG&amp;E</td>
+      <td>95404</td>
+      <td>5.220</td>
+      <td>0.0</td>
+      <td>Residential</td>
+      <td>2015-09-17</td>
+      <td>NaN</td>
+      <td>NEM</td>
+    </tr>
+    <tr>
+      <th>2043</th>
+      <td>PGE-INT-113273778</td>
+      <td>PG&amp;E</td>
+      <td>94549</td>
+      <td>15.268</td>
+      <td>0.0</td>
+      <td>Residential</td>
+      <td>2015-03-11</td>
+      <td>NaN</td>
+      <td>NEM</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dgstats</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="n">RAW</span> <span class="o">/</span> <span class="s1">&#39;dgstats_raw.parquet&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Saved dgstats_raw.parquet&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saved dgstats_raw.parquet
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="caiso-grid-data-load-via-gridstatus-cec-monthly-generation">
+<h2><span class="section-number">1.2. </span>1.2 CAISO Grid Data (load via gridstatus + CEC monthly generation)<a class="headerlink" href="#caiso-grid-data-load-via-gridstatus-cec-monthly-generation" title="Permalink to this heading">#</a></h2>
+<p>2-phase fetch — runs once, results cached in <code class="docutils literal notranslate"><span class="pre">data/raw/caiso_shards/</span></code>:</p>
+<ul class="simple">
+<li><p><strong>Phase 1</strong> (~2 min): 108 monthly load calls via <code class="docutils literal notranslate"><span class="pre">gridstatus.get_load_hourly</span></code> → aggregated to monthly GWh</p></li>
+<li><p><strong>Phase 2</strong> (seconds): reads CEC monthly electricity generation Excel files from <code class="docutils literal notranslate"><span class="pre">data/raw/cec/</span></code></p>
+<ul>
+<li><p><strong>Pre-requisite</strong>: download the CEC “Monthly Electricity Generation by Energy Source” Excel file(s)
+from https://www.energy.ca.gov/data-reports/energy-almanac and place in <code class="docutils literal notranslate"><span class="pre">data/raw/cec/</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Phase 3</strong>: left-join on (year, month), compute <code class="docutils literal notranslate"><span class="pre">net_load_gwh</span></code>, <code class="docutils literal notranslate"><span class="pre">net_load_ratio</span></code>, <code class="docutils literal notranslate"><span class="pre">monthly_ramp_gwh</span></code></p></li>
+<li><p><strong>Phase 4</strong>: QC row-count + null checks</p></li>
+</ul>
+<p>Output columns: <code class="docutils literal notranslate"><span class="pre">year</span></code>, <code class="docutils literal notranslate"><span class="pre">month</span></code>, <code class="docutils literal notranslate"><span class="pre">demand_gwh</span></code>, <code class="docutils literal notranslate"><span class="pre">solar_gwh</span></code>, <code class="docutils literal notranslate"><span class="pre">wind_gwh</span></code>, <code class="docutils literal notranslate"><span class="pre">total_generation_gwh</span></code>,
+<code class="docutils literal notranslate"><span class="pre">net_load_gwh</span></code>, <code class="docutils literal notranslate"><span class="pre">net_load_ratio</span></code>, <code class="docutils literal notranslate"><span class="pre">monthly_ramp_gwh</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">caiso</span> <span class="o">=</span> <span class="n">fetch_caiso_all</span><span class="p">(</span><span class="n">start_year</span><span class="o">=</span><span class="mi">2015</span><span class="p">,</span> <span class="n">end_year</span><span class="o">=</span><span class="mi">2023</span><span class="p">,</span> <span class="n">data_dir</span><span class="o">=</span><span class="n">ROOT</span> <span class="o">/</span> <span class="s1">&#39;data&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;CAISO monthly rows: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">caiso</span><span class="p">)</span><span class="si">:</span><span class="s1">,</span><span class="si">}</span><span class="s1">  |  expected 108 (9 years × 12 months)&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">caiso</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span>
+<span class="n">caiso</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CAISO monthly rows: 108  |  expected 108 (9 years × 12 months)
+year                      int32
+month                     int32
+demand_gwh              float64
+solar_gwh               float64
+wind_gwh                float64
+total_generation_gwh    float64
+net_load_gwh            float64
+net_load_ratio          float64
+monthly_ramp_gwh        float64
+dtype: object
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>demand_gwh</th>
+      <th>solar_gwh</th>
+      <th>wind_gwh</th>
+      <th>total_generation_gwh</th>
+      <th>net_load_gwh</th>
+      <th>net_load_ratio</th>
+      <th>monthly_ramp_gwh</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2015</td>
+      <td>1</td>
+      <td>17803.362</td>
+      <td>1253.833333</td>
+      <td>1015.0</td>
+      <td>16349.583333</td>
+      <td>15534.528667</td>
+      <td>0.872562</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2015</td>
+      <td>2</td>
+      <td>15997.661</td>
+      <td>1253.833333</td>
+      <td>1015.0</td>
+      <td>16349.583333</td>
+      <td>13728.827667</td>
+      <td>0.858177</td>
+      <td>1805.701</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2015</td>
+      <td>3</td>
+      <td>18211.601</td>
+      <td>1253.833333</td>
+      <td>1015.0</td>
+      <td>16349.583333</td>
+      <td>15942.767667</td>
+      <td>0.875418</td>
+      <td>2213.940</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">caiso</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="n">RAW</span> <span class="o">/</span> <span class="s1">&#39;caiso_monthly_raw.parquet&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Saved caiso_monthly_raw.parquet&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saved caiso_monthly_raw.parquet
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="nrel-deepsolar-ca">
+<h2><span class="section-number">1.3. </span>1.3 NREL DeepSolar CA<a class="headerlink" href="#nrel-deepsolar-ca" title="Permalink to this heading">#</a></h2>
+<p>Place <code class="docutils literal notranslate"><span class="pre">deepsolar_ca_tracts.csv</span></code> in <code class="docutils literal notranslate"><span class="pre">data/raw/</span></code> (available from Kaggle or the project’s GitHub).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_csv</span> <span class="o">=</span> <span class="n">RAW</span> <span class="o">/</span> <span class="s1">&#39;deepsolar_ca_tracts.csv&#39;</span>
+<span class="k">assert</span> <span class="n">ds_csv</span><span class="o">.</span><span class="n">exists</span><span class="p">(),</span> <span class="sa">f</span><span class="s1">&#39;Place DeepSolar CSV at </span><span class="si">{</span><span class="n">ds_csv</span><span class="si">}</span><span class="s1">&#39;</span>
+
+<span class="n">deepsolar</span> <span class="o">=</span> <span class="n">load_deepsolar</span><span class="p">(</span><span class="n">ds_csv</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;DeepSolar CA tracts: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">deepsolar</span><span class="p">)</span><span class="si">:</span><span class="s1">,</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">deepsolar</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="n">RAW</span> <span class="o">/</span> <span class="s1">&#39;deepsolar_ca_tracts.parquet&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DeepSolar CA tracts: 8,056
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ziptract-crosswalk">
+<h2><span class="section-number">1.4. </span>1.4 ZIP–Tract Crosswalk<a class="headerlink" href="#ziptract-crosswalk" title="Permalink to this heading">#</a></h2>
+<p>HUD ZIP-to-Tract crosswalk (Dec 2023 vintage, XLSX) is already at <code class="docutils literal notranslate"><span class="pre">data/raw/zip_tract_xwalk.xlsx</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xwalk_path</span> <span class="o">=</span> <span class="n">RAW</span> <span class="o">/</span> <span class="s1">&#39;zip_tract_xwalk.xlsx&#39;</span>
+<span class="k">assert</span> <span class="n">xwalk_path</span><span class="o">.</span><span class="n">exists</span><span class="p">(),</span> <span class="sa">f</span><span class="s1">&#39;Expected crosswalk at </span><span class="si">{</span><span class="n">xwalk_path</span><span class="si">}</span><span class="s1">&#39;</span>
+
+<span class="n">xwalk</span> <span class="o">=</span> <span class="n">load_zip_tract_crosswalk</span><span class="p">(</span><span class="n">xwalk_path</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;ZIP-tract pairs (CA): </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">xwalk</span><span class="p">)</span><span class="si">:</span><span class="s1">,</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">xwalk</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="n">RAW</span> <span class="o">/</span> <span class="s1">&#39;zip_tract_xwalk.parquet&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Saved zip_tract_xwalk.parquet&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ZIP-tract pairs (CA): 16,022
+Saved zip_tract_xwalk.parquet
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="summary">
+<h2><span class="section-number">1.5. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>File</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dgstats_raw.parquet</span></code></p></td>
+<td><p>Residential NEM installs, 2015–2023, CA IOUs</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">caiso_monthly_raw.parquet</span></code></p></td>
+<td><p>CAISO monthly grid data (load + CEC generation), 2015–2023 (108 rows)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">deepsolar_ca_tracts.parquet</span></code></p></td>
+<td><p>NREL DeepSolar CA census tracts</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">zip_tract_xwalk.parquet</span></code></p></td>
+<td><p>HUD ZIP-to-tract crosswalk (CA only)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">data/external/utility_territories.geojson</span></code></p></td>
+<td><p>PG&amp;E / SCE / SDG&amp;E service area polygons</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>→ Proceed to <code class="docutils literal notranslate"><span class="pre">02_cleaning_qa.ipynb</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">util_shp</span> <span class="o">=</span> <span class="n">EXT</span> <span class="o">/</span> <span class="s1">&#39;ElectricLoadServingEntities_IOU_POU.shp&#39;</span>
+<span class="k">assert</span> <span class="n">util_shp</span><span class="o">.</span><span class="n">exists</span><span class="p">(),</span> <span class="sa">f</span><span class="s1">&#39;Expected shapefile at </span><span class="si">{</span><span class="n">util_shp</span><span class="si">}</span><span class="s1">&#39;</span>
+
+<span class="n">util_gdf</span> <span class="o">=</span> <span class="n">load_utility_territories</span><span class="p">(</span><span class="n">util_shp</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Utility territories loaded: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">util_gdf</span><span class="p">)</span><span class="si">}</span><span class="s1"> features&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">util_gdf</span><span class="p">[[</span><span class="s1">&#39;Acronym&#39;</span><span class="p">,</span> <span class="s1">&#39;Utility&#39;</span><span class="p">,</span> <span class="s1">&#39;Type&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+
+<span class="n">util_gdf</span><span class="o">.</span><span class="n">to_file</span><span class="p">(</span><span class="n">EXT</span> <span class="o">/</span> <span class="s1">&#39;utility_territories.geojson&#39;</span><span class="p">,</span> <span class="n">driver</span><span class="o">=</span><span class="s1">&#39;GeoJSON&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Saved utility_territories.geojson&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Utility territories loaded: 3 features
+Acronym                        Utility Type
+    SCE     Southern California Edison  IOU
+   PG&amp;E Pacific Gas &amp; Electric Company  IOU
+  SDG&amp;E       San Diego Gas &amp; Electric  IOU
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Saved utility_territories.geojson
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h2><span class="section-number">1.6. </span>Summary<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>File</p></th>
+<th class="head"><p>Rows</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">dgstats_raw.parquet</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">caiso_hourly_raw.parquet</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">deepsolar_ca_tracts.parquet</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">zip_tract_xwalk.parquet</span></code></p></td>
+<td><p>—</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>→ Proceed to <code class="docutils literal notranslate"><span class="pre">02_cleaning_qa.ipynb</span></code></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "solar_grid_analysis"
+        },
+        kernelOptions: {
+            name: "solar_grid_analysis",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'solar_grid_analysis'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">California Solar Adoption &amp; Grid Evolution: A Data-Driven Analysis</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="02_cleaning_qa.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>02 · Cleaning &amp; QA</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iou-interconnection-applications-replaces-cec-dgstats">1.1. 1.1 IOU Interconnection Applications (replaces CEC DGStats)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#caiso-grid-data-load-via-gridstatus-cec-monthly-generation">1.2. 1.2 CAISO Grid Data (load via gridstatus + CEC monthly generation)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nrel-deepsolar-ca">1.3. 1.3 NREL DeepSolar CA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ziptract-crosswalk">1.4. 1.4 ZIP–Tract Crosswalk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">1.5. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.6. Summary</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Adrian Nie
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
