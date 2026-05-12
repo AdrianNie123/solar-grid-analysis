@@ -1,15 +1,15 @@
-title: "California Solar Adoption & Grid Displacement Analysis"
+title: California Solar Adoption & Grid Evolution (2015–2023)
 author: Adrian Nie
-copyright: "2024"
-logo: ""
+copyright: "2026"
+
+format: jb-book
 
 execute:
-  execute_notebooks: "off"   # notebooks are pre-executed; flip to "auto" when data is ready
+  execute_notebooks: "off"  # Notebooks already run; no need to re-execute
 
 html:
   use_issues_button: false
   use_repository_button: false
-  use_edit_page_button: false
 
 parse:
   myst_enable_extensions:
@@ -19,3 +19,5 @@ parse:
 
 latex:
   latex_engine: pdflatex
+  latex_documents:
+    targetname: book.tex

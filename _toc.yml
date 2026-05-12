@@ -1,10 +1,22 @@
 format: jb-book
 root: intro
 chapters:
-  - file: chapters/01_data_methods
-  - file: chapters/02_eda_findings
-  - file: chapters/03_regression_results
-  - file: chapters/04_spatial_patterns
-  - file: chapters/05_duck_curve
-  - file: chapters/06_limitations
-  - file: chapters/07_appendix
+  - file: notebooks/01_data_ingest
+    title: Data Ingestion & Validation
+  - file: notebooks/02_cleaning_qa
+    title: Data Cleaning & QC
+  - file: notebooks/05_eda
+    title: Exploratory Data Analysis
+  - file: adoption
+    title: Where Solar Clustered (2015–2023)
+  - file: grid_evolution
+    title: How the Grid Changed
+  - file: spatial_temporal
+    title: Spatial & Temporal Dynamics
+  - file: limitations
+    title: Limitations & Future Directions
+  - file: appendix
+    title: Appendix
+
+options:
+  numbered: true

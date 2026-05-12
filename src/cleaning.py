@@ -38,8 +38,8 @@ def clean_dgstats(df: pd.DataFrame) -> pd.DataFrame:
         df["app_approved_date"] < pd.Timestamp("2023-04-15")
     )
 
-    storage_col = df["battery_storage"] if "battery_storage" in df.columns else pd.Series(False, index=df.index)
-    df["has_storage"] = storage_col.astype(bool)
+    storage_col = df["battery_storage"] if "battery_storage" in df.columns else pd.Series(0.0, index=df.index)
+    df["has_storage"] = pd.to_numeric(storage_col, errors="coerce").fillna(0) > 0
 
     return df
 

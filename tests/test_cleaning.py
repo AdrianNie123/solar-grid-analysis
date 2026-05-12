@@ -56,8 +56,8 @@ def test_clean_dgstats_flags_size_outlier():
          "app_approved_date": "2020-06-01", "utility": "PG&E"},
     ])
     result = clean_dgstats(df)
-    assert result[result["application_id"] == "1"]["size_outlier"].iloc[0] is True
-    assert result[result["application_id"] == "2"]["size_outlier"].iloc[0] is False
+    assert result[result["application_id"] == "1"]["size_outlier"].iloc[0] == True
+    assert result[result["application_id"] == "2"]["size_outlier"].iloc[0] == False
 
 
 def test_clean_dgstats_q1_2023_flag():
@@ -68,8 +68,8 @@ def test_clean_dgstats_q1_2023_flag():
          "app_approved_date": "2023-06-01", "utility": "SDG&E"},
     ])
     result = clean_dgstats(df)
-    assert result[result["application_id"] == "1"]["q1_2023_flag"].iloc[0] is True
-    assert result[result["application_id"] == "2"]["q1_2023_flag"].iloc[0] is False
+    assert result[result["application_id"] == "1"]["q1_2023_flag"].iloc[0] == True
+    assert result[result["application_id"] == "2"]["q1_2023_flag"].iloc[0] == False
 
 
 def test_aggregate_dgstats_panel_cumulative():
@@ -81,6 +81,6 @@ def test_aggregate_dgstats_panel_cumulative():
     ])
     clean = clean_dgstats(df)
     panel = aggregate_dgstats_panel(clean)
-    panel = panel.sort_values("year").reset_index(drop=True)
+    panel = panel.sort_values("install_year").reset_index(drop=True)
     assert panel.iloc[0]["btm_capacity_kw"] == pytest.approx(5.0)
     assert panel.iloc[1]["btm_capacity_kw"] == pytest.approx(15.0)  # cumulative
