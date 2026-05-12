@@ -1,0 +1,30 @@
+name: deploy-book
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy-book:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Jupyter Book
+        run: pip install jupyter-book ghp-import
+
+      - name: Build the book
+        run: jupyter-book build solar_grid_analysis/
+
+      - name: Deploy to GitHub Pages
+        run: ghp-import -n -p -f solar_grid_analysis/_build/html
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
